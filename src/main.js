@@ -4,9 +4,21 @@ import router from './router'
 import VueCarousel from 'vue-carousel';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import VueScrollTo from 'vue-scrollto';
 
 
 Vue.config.productionTip = false
+
+Vue.use(VueScrollTo, {
+  container: "body",
+  el:'#element',
+  duration: 500,
+  easing: "ease",
+  offset: 0,
+  force: true,
+  x: false,
+  y: true
+})
 
 Vue.use(VueCarousel);
 AOS.init({

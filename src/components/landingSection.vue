@@ -6,7 +6,7 @@
           <h1>The <br><span>Flame Grilled </span> <br><span class="way">Way</span></h1>
           <Button type="button" class="btn_filled">Order Now</Button>
           <Button class="btn_outline">
-            <router-link :to="{name: 'Menu'}" class="routerlink">SEE MENU
+            <router-link :to="{name: 'Menu'}" class="routerlink" v-scroll-to="'#menu_home'">SEE MENU
               <img src="https://img.icons8.com/material/24/FFDB16/long-arrow-right--v2.png" alt="arrow-left"/>
             </router-link>
           </Button>

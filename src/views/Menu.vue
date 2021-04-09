@@ -11,17 +11,20 @@
 
           </h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="btn">
 
-            <Button class="btnSec">See Full Menu</Button>
-          </div>
-
+          <Button class="btnSec">
+            <a href="#" v-scroll-to="'#menuSection'">
+              SEE FULL MENU
+            </a>
+          </Button>
         </div>
+
+
       </div>
 
     </div>
     <hr>
-    <div class="menu">
+    <div class="menu" id="menuSection">
       <h3>Our Menu</h3>
       <div class="menu_list">
         <Menus v-for="(menus, i) in  our_menu" :key="i" :menu_name="menus.menu_name" :img="menus.img"
@@ -172,6 +175,17 @@ export default {
         },
       ]
     }
+  },
+  methods: {
+    scrollToPosition() {
+      var section = this.$router.currentRoute.hash.replace("#", "");
+      if (section)
+        this.$nextTick(() => window.document.getElementById(section).scrollIntoView());
+    },
+  },
+
+  mounted() {
+    this.scrollToPosition();
   }
 }
 </script>
@@ -198,15 +212,14 @@ export default {
 
   .menu_signature {
     margin: 0 auto;
+    width: 90%;
+    padding-top: 10vh;
 
     h2 {
       padding: 40px;
       font-size: 40px;
 
     }
-
-    width: 90%;
-    padding-top: 14vh;
 
     .signature_info {
       display: grid;
@@ -242,26 +255,25 @@ export default {
         opacity: 0.8;
       }
 
-      .btn {
-        width: 60%;
-        padding-top: 55px;
 
-        .btnSec {
-          @include orderBtn;
-          border: none;
-          background: lighten($bgColor, 10%);
-          padding: 20px;
-          width: 40%;
-          margin-top: 55px;
-          color: $accentColor;
+      .btnSec {
+        @include orderBtn;
+        border: none;
+        background: lighten($bgColor, 10%);
+        padding: 20px;
+        width: 40%;
+        margin-top: 55px;
+        color: $accentColor;
 
-          &:hover {
-            background: lighten($bgColor, 10%);
-          }
+        a {
+          color: $textColor;
+          text-decoration: none;
         }
 
+        &:hover {
+          background: lighten($bgColor, 10%);
+        }
       }
-
 
     }
   }

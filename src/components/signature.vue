@@ -22,7 +22,7 @@
           <div class="btn">
             <Button class="btnPrim">Order Now</Button>
             <Button class="btnSec">
-              <router-link :to="{name: 'Menu'}" class="routerlink">SEE MENU
+              <router-link to='Menu/#menuSection' class="routerlink" exact>SEE MENU
               </router-link>
             </Button>
           </div>
@@ -47,7 +47,7 @@
           <div class="btn">
             <Button class="btnPrim">Order Now</Button>
             <Button class="btnSec">
-              <router-link :to="{name: 'Menu'}" class="routerlink">SEE MENU
+              <router-link to='Menu/#menuSection' class="routerlink" exact>SEE MENU
               </router-link>
             </Button>
           </div>
@@ -65,7 +65,18 @@
 
 <script>
 export default {
-  name: "signature"
+  name: "signature",
+  methods: {
+    scrollToPosition() {
+      var section=this.$router.currentRoute.hash.replace("#", "");
+      if (section)
+        this.$nextTick(()=> window.document.getElementById(section).scrollIntoView());
+    },
+  },
+
+  mounted() {
+    // this.scrollToPosition();
+  }
 }
 </script>
 
@@ -154,7 +165,14 @@ export default {
 
           @include seeMenu;
 
+          &:hover {
+            .routerlink {
+              color: $bgColor;
+
+            }
+          }
         }
+
 
       }
     }

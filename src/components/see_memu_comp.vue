@@ -13,7 +13,7 @@
           <div class="priceAndOrder">
             <p class="featured_price"><span>{{ price }}</span></p>
             <Button class="see_menu">
-              <router-link :to="{name: 'Menu'}" class="routerlink">SEE MENU
+              <router-link to='Menu/#menuSection' class="routerlink" exact>SEE MENU
               </router-link>
             </Button>
           </div>

@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-
-
     <div class="featured_menu">
       <div class="menu_items">
         <div class="menus">
