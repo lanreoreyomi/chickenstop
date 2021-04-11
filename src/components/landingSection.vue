@@ -96,31 +96,10 @@ export default {
 
 .container {
   color: $textColor;
-
-  #home {
-    .landing {
-      .container {
-        .slick-slider {
-          .slick-dots {
-            .ul {
-              button {
-                background: red !important;
-                width: 1000px;
-
-                &::before {
-
-                  background: red !important;
-
-
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+  button.slick-prev:before, button.slick-next:before {
+    background-color: red !important;
+    color: white !important;
   }
-
 
   .landing_info {
     display: grid !important;

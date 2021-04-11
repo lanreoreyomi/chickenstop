@@ -63,7 +63,22 @@ export default {
 .container {
   color: $textColor;
   background: $bgColor;
+  button.slick-prev:before, button.slick-next:before {
+    background-color: red !important;
+    color: white !important;
+  }
+  .slick-dots .slick-active button:before  {
+    color: $textColor;
+    opacity:1;
+    padding-top: 40px;
+    font-size:10px;
+  }
+  .slick-dots li button:before {
+    color: $textColor;
+    padding-top: 40px;
+    font-size:10px;
 
+  }
   .mobileNav {
     display: none;
   }
@@ -72,6 +87,18 @@ export default {
 
 @media screen and (max-width: 823px) {
   .container {
+    .slick-dots .slick-active button:before  {
+      color: $textColor;
+      opacity:1;
+      padding-top: 0px;
+      font-size:10px;
+    }
+    .slick-dots li button:before {
+      color: $textColor;
+      padding-top: 0px;
+      font-size:10px;
+
+    }
     .desktopNav {
       display: none;
     }
