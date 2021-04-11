@@ -12,11 +12,13 @@
           <li>
             <router-link :to="{name: 'Menu'}" exact class="router-link"> Menu</router-link>
           </li>
+          <li>
+            <router-link :to="{name: 'Menu'}" exact class="router-link"> Our Story</router-link>
+          </li>
 
-
-          <li>Locations</li>
+          <li>Location</li>
           <li id="order_now">
-            <Button type="button" class="btn_filled">Order Now</Button>
+            <a class="btn_filled">Order Now</a>
           </li>
         </ul>
 
@@ -84,10 +86,10 @@ export default {
     background: $bgColor;
 
     .brand_logo {
-      margin-left: 50px;
+      margin-left: 100px;
 
       img {
-        max-width: 200px;
+        max-width: 100px;
       }
     }
 
@@ -109,10 +111,11 @@ export default {
           display: inline-block;
           cursor: pointer;
           padding: 10px;
-          margin: 0 auto 0 60px;
+          margin: 0 auto 0 30px;
           text-decoration: none;
           opacity: 0.6;
           color: $textColor;
+          font-weight: bold;
 
           .router-link {
             list-style: none;
@@ -122,9 +125,10 @@ export default {
             text-decoration: none;
             color: $textColor;
             padding: 10px;
+            font-weight: bold;
 
             &:hover {
-             color: red;
+              color: red;
               border-bottom: 1px solid $accentColor;
             }
           }
@@ -138,7 +142,7 @@ export default {
         #order_now {
           opacity: 1;
 
-          Button {
+          a {
             text-align: center;
             @include homeButton;
             opacity: 1;
@@ -146,7 +150,8 @@ export default {
             margin-left: 2px;
             background: $redFill;
             color: $textColor;
-            font-weight: normal;
+            font-weight: bold;
+            padding: 12px 20px 12px 20px;
 
             &:before {
               color: $bgColor !important;
@@ -172,12 +177,14 @@ export default {
 
   }
 }
-@media only screen and (min-width: 768px) and (max-width:1024px){
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
 
   .container {
     .header {
       .header_menu {
         width: 100%;
+
         ul {
           li {
             margin: 0 auto 0 20px;

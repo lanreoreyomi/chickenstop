@@ -1,15 +1,14 @@
 <template>
   <div class="container">
     <VueSlickCarousel :arrows="false" :dots="true" v-bind="settings">
-      <div class="landing_info" data-aos="zoom-in" data-aos-duration="1200">
+      <div class="landing_info">
         <div class="landing_text">
-          <h1>The <br><span>Flame Grilled </span> <br><span class="way">Way</span></h1>
+          <h1>The <span>Flame Grilled </span> <span class="way">Way</span></h1>
           <Button type="button" class="btn_filled">Order Now</Button>
-          <Button class="btn_outline">
-            <router-link :to="{name: 'Menu'}" class="routerlink" v-scroll-to="'#menu_home'">SEE MENU
-              <img src="https://img.icons8.com/material/24/FFDB16/long-arrow-right--v2.png" alt="arrow-left"/>
-            </router-link>
-          </Button>
+
+          <router-link :to="{name: 'Menu'}" class="routerlink btn_outline" v-scroll-to="'#menu_home'">SEE MENU
+            <img src="https://img.icons8.com/material/24/000000/long-arrow-right--v2.png" alt="arrow-left"/>
+          </router-link>
         </div>
 
 
@@ -21,11 +20,11 @@
         <div class="landing_text">
           <h1>Citrus <span>  Marinated Chicken </span><span class="way">and Grilled Slow</span></h1>
           <Button type="button" class="btn_filled">Order Now</Button>
-          <Button class="btn_outline">
-            <router-link :to="{name: 'Menu'}" class="routerlink">SEE MENU
-              <img src="https://img.icons8.com/material/24/FFDB16/long-arrow-right--v2.png" alt="arrow-left"/>
-            </router-link>
-          </Button>
+
+          <router-link :to="{name: 'Menu'}" class="routerlink btn_outline">SEE MENU
+            <img src="https://img.icons8.com/material/24/000000/long-arrow-right--v2.png" alt="arrow-left"/>
+          </router-link>
+
         </div>
         <div class="landing_img">
           <img src="../assets/Images/slide2.png" alt="Brand Logo">
@@ -36,11 +35,11 @@
           <h1>Our Sides are <span>  Made Fresh </span><span class="way"> & Hand-Made Daily</span></h1>
 
           <Button type="button" class="btn_filled">Order Now</Button>
-          <Button class="btn_outline">
-            <router-link :to="{name: 'Menu'}" class="routerlink">SEE MENU
-              <img src="https://img.icons8.com/material/24/FFDB16/long-arrow-right--v2.png" alt="arrow-left"/>
-            </router-link>
-          </Button>
+
+          <router-link :to="{name: 'Menu'}" class="routerlink btn_outline">SEE MENU
+            <img src="https://img.icons8.com/material/24/000000/long-arrow-right--v2.png" alt="arrow-left"/>
+          </router-link>
+
         </div>
         <div class="landing_img">
           <img src="../assets/Images/slide3.png" alt="Brand Logo">
@@ -98,6 +97,31 @@ export default {
 .container {
   color: $textColor;
 
+  #home {
+    .landing {
+      .container {
+        .slick-slider {
+          .slick-dots {
+            .ul {
+              button {
+                background: red !important;
+                width: 1000px;
+
+                &::before {
+
+                  background: red !important;
+
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
   .landing_info {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr;
@@ -107,7 +131,7 @@ export default {
     .landing_text {
       padding: 0;
       text-align: start;
-      margin: 15vh auto 0 0;
+      margin: 20vh auto 0 0;
       width: 100%;
 
       h1 {
@@ -133,26 +157,21 @@ export default {
         margin-top: 20px;
       }
 
-      Button {
-        text-align: center;
+      .btn_filled {
         @include homeButton;
         margin-top: 5vh;
         margin-right: 20px;
-        border-radius: 6px;
-        margin-left: 2px;
-        width: 30%;
-
       }
 
-      .btn_outline {
+      .routerlink {
         @include seeMenu;
-        width: 30%;
         color: $textColor;
 
-        .routerlink {
-          color: $textColor;
-          width: 30%;
-        }
+        text-decoration: none;
+        display: inline-block;
+        width: 160px;
+        text-align: center;
+        font-size: 16px;
 
         img {
           background: none;
@@ -203,22 +222,26 @@ export default {
       .landing_text {
         text-align: center;
         margin: 5vh auto;
+
         grid-area: b;
 
         h1 {
           font-size: 30px;
         }
 
-        Button {
+        .btn_filled {
+          width: 80% !important;
           margin: 2vh auto;
-          width: 90%;
         }
 
-        .btn_outline {
-          width: 90%;
-          margin-top: 1vh;
+        .routerlink {
+
+          width: 80% !important;
+          display: inline-block;
+          text-align: center;
 
         }
+
       }
 
       .landing_img {
@@ -256,14 +279,16 @@ export default {
           font-size: 30px;
         }
 
-        Button {
+        .btn_filled {
+          width: 80% !important;
           margin: 2vh auto;
-          width: 90%;
         }
 
-        .btn_outline {
-          width: 90%;
-          margin-top: 1vh;
+        .routerlink {
+
+          width: 80% !important;
+          display: inline-block;
+          text-align: center;
 
         }
       }
@@ -284,12 +309,6 @@ export default {
 
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .container {
-    display: block;
-  }
-}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -311,14 +330,16 @@ export default {
           font-size: 30px;
         }
 
-        Button {
-          margin: 2vh auto;
-          width: 90%;
+        .btn_filled {
+          width: 40% !important;
+          margin: 2vh 20px 2vh auto;
         }
 
-        .btn_outline {
-          width: 90%;
-          margin-top: 1vh;
+        .routerlink {
+
+          width: 40% !important;
+          display: inline-block;
+          text-align: center;
 
         }
       }
@@ -337,6 +358,7 @@ export default {
 
   }
 }
+
 @media only screen and (min-width: 1024px) and (max-width: 1366px) {
   .container {
 
@@ -356,14 +378,17 @@ export default {
           font-size: 30px;
         }
 
-        Button {
-          margin: 2vh auto;
-          width: 90%;
+
+        .btn_filled {
+          width: 40% !important;
+          margin: 2vh 20px 2vh auto;
         }
 
-        .btn_outline {
-          width: 90%;
-          margin-top: 1vh;
+        .routerlink {
+
+          width: 40% !important;
+          display: inline-block;
+          text-align: center;
 
         }
       }

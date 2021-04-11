@@ -12,11 +12,7 @@
           </h3>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
 
-          <Button class="btnSec">
-            <a href="#" v-scroll-to="'#menuSection'">
-              SEE FULL MENU
-            </a>
-          </Button>
+
         </div>
 
 
@@ -24,7 +20,7 @@
 
     </div>
     <hr>
-    <div class="menu" id="menuSection">
+    <div class="menu" id="menu">
       <h3>Our Menu</h3>
       <div class="menu_list">
         <Menus v-for="(menus, i) in  our_menu" :key="i" :menu_name="menus.menu_name" :img="menus.img"
@@ -201,8 +197,9 @@ export default {
 }
 
 .container {
-  width: 93%;
+  width: 100%;
   margin: 0 auto;
+
 
   hr {
     width: 50%;
@@ -239,12 +236,13 @@ export default {
 
     .signature_text {
       position: relative;
-
+      padding: 30px;
       h3 {
         padding-top: 25px;
         text-align: start;
         font-size: 50px;
-        margin-top: 10vh;
+        margin-top: 25vh;
+
         opacity: 0.8;
         background: black;
 
@@ -279,6 +277,9 @@ export default {
   }
 
   .menu {
+    width: 88%;
+    margin: 0 auto;
+
     h3 {
       padding-top: 25px;
       text-align: start;
@@ -286,6 +287,7 @@ export default {
       margin-top: 10vh;
       opacity: 0.8;
       background: black;
+      padding-left: 20px;
     }
 
     .menu_list {
@@ -316,8 +318,8 @@ export default {
   .container {
     .menu_signature {
       width: 100% !important;
-      padding: 20px;
-      margin-top: 5vh;
+
+      padding-top: 10vh;
 
       h2 {
         padding: 10px;
@@ -339,7 +341,7 @@ export default {
 
         img {
           margin: 0 auto;
-          width: 100%;
+          width: 90%;
           border-radius: 2rem;
         }
 
@@ -426,7 +428,7 @@ export default {
 
         img {
           margin: 0 auto;
-          width: 100%;
+          width: 90%;
           border-radius: 2rem;
         }
 
@@ -518,7 +520,7 @@ export default {
 
         img {
           margin: 0 auto;
-          width: 100%;
+          width: 90%;
           border-radius: 2rem;
         }
 
@@ -598,7 +600,7 @@ export default {
 
         img {
           margin: 0 auto;
-          width: 100%;
+          width: 90%;
           border-radius: 2rem;
         }
 

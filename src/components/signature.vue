@@ -2,13 +2,12 @@
   <div class="container">
     <div class="signature">
       <h2>Signature Menu</h2>
-      <div class="signature_info">
-        <div class="signature_img" data-aos="zoom-in-up" data-aos-offset="300"
-             data-aos-easing="ease-in-sine">
+      <div class="signature_info" data-aos="zoom-in-up" data-aos-offset="300"
+           data-aos-easing="ease-in-sine">
+        <div class="signature_img">
           <img src="../assets/Images/marinated.png" alt="marinated_chicken">
         </div>
-        <div class="signature_text" data-aos="zoom-in-up" data-aos-offset="300"
-             data-aos-easing="ease-in-sine">
+        <div class="signature_text">
           <h3>
             Signature citrus marinade chicken.
           </h3>
@@ -21,19 +20,19 @@
 
           <div class="btn">
             <Button class="btnPrim">Order Now</Button>
-            <Button class="btnSec">
-              <router-link to='Menu/#menuSection' class="routerlink" exact>SEE MENU
-              </router-link>
-            </Button>
+
+            <router-link to='Menu/#menuSection' class="routerlink btnSec" exact>SEE MENU
+            </router-link>
+
           </div>
 
         </div>
       </div>
     </div>
     <div class="signature">
-      <div class="signature_info2">
-        <div class="signature_text" data-aos="zoom-in-up" data-aos-offset="300"
-             data-aos-easing="ease-in-sine">
+      <div class="signature_info2" data-aos="zoom-in-up" data-aos-offset="300"
+           data-aos-easing="ease-in-sine">
+        <div class="signature_text">
           <h3>
             Space for Another Signature Meal
           </h3>
@@ -46,15 +45,14 @@
 
           <div class="btn">
             <Button class="btnPrim">Order Now</Button>
-            <Button class="btnSec">
-              <router-link to='Menu/#menuSection' class="routerlink" exact>SEE MENU
-              </router-link>
-            </Button>
+
+            <router-link to='Menu' class="routerlink btnSec" exact>SEE MENU
+            </router-link>
+
           </div>
 
         </div>
-        <div class="signature_img" data-aos="zoom-in-up" data-aos-offset="300"
-             data-aos-easing="ease-in-sine">
+        <div class="signature_img">
           <img src="../assets/Images/marinated2.jpeg" alt="marinated_chicken">
         </div>
       </div>
@@ -68,9 +66,9 @@ export default {
   name: "signature",
   methods: {
     scrollToPosition() {
-      var section=this.$router.currentRoute.hash.replace("#", "");
+      var section = this.$router.currentRoute.hash.replace("#", "");
       if (section)
-        this.$nextTick(()=> window.document.getElementById(section).scrollIntoView());
+        this.$nextTick(() => window.document.getElementById(section).scrollIntoView());
     },
   },
 
@@ -151,6 +149,7 @@ export default {
         .routerlink {
           color: $textColor;
           text-decoration: none;
+          text-align: center;
 
           &:hover {
             color: $bgColor;
@@ -159,6 +158,7 @@ export default {
 
         .btnPrim {
           @include orderBtn;
+          border-radius: 2rem !important;
         }
 
         .btnSec {
@@ -222,13 +222,14 @@ export default {
         h3 {
 
           font-size: 30px;
-
+          text-align: center;
         }
 
         .signature_description {
           p {
             padding-top: 5px;
             opacity: 0.8;
+            text-align: center;
           }
         }
 

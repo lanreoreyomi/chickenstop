@@ -56,17 +56,18 @@ export default {
   margin-top: 40px;
   .menu_items {
     .menus {
-      max-width: 94%;
+      max-width: 90%;
       margin: 80px auto;
       grid-gap: 0;
       cursor: pointer;
       border-radius: 6px;
       padding: 20px;
       position: relative;
-      background: lighten($bgColor, 10%);
+      background: lighten($bgColor, 2%);
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
       transform: scale(1);
       z-index: 9;
+
       .menu_img {
         text-align: center;
         position: relative;
@@ -104,7 +105,6 @@ export default {
         }
 
         .priceAndOrder {
-
           display: flex;
           justify-content: space-between;
           margin-top: 20px;
@@ -114,10 +114,11 @@ export default {
             color: $redFill !important;
             font-size: 16px;
             padding: 10px;
-            border-radius:40%;
+            border-radius: 40%;
             background: $bgColor;
+
             span {
-              color: $redFill;
+              color: $accentColor;
               font-weight: normal;
             }
           }
@@ -127,7 +128,7 @@ export default {
             @include orderBtn();
             margin: 0 !important;
             width: 50%;
-
+            border-radius: 2rem !important;
           }
         }
 
@@ -139,15 +140,16 @@ export default {
     }
   }
 }
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width:  600px) {
+@media only screen and (max-width: 600px) {
   .container {
 
     .menu_items {
 
       .menus {
         width: 90%;
-        margin: 10vh auto;
+        margin: 5vh auto;
         padding: 20px;
 
         .menu_img {
@@ -175,7 +177,8 @@ export default {
     }
   }
 }
-@media only screen and (min-width:  600px) and (max-width:786px) {
+
+@media only screen and (min-width: 600px) and (max-width: 786px) {
   .container {
 
     .menu_items {
@@ -200,7 +203,8 @@ export default {
         .menu_text {
           text-align: center;
           margin-top: 24vh;
-          .menu_item_desc{
+
+          .menu_item_desc {
             margin: 10px;
             padding: 0;
           }
@@ -217,13 +221,14 @@ export default {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width:1024px){
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
 
     .menu_items {
+      margin-top: 4vh;
 
       .menus {
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
         padding: 20px;
 
@@ -253,14 +258,14 @@ export default {
   }
 }
 
-@media only screen and (min-width: 1024px) and (max-width:1366px){
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
   .container {
 
     .menu_items {
-
+margin-top:10vh;
       .menus {
         width: 90%;
-        margin: 6vh auto;
+        margin: 1vh auto;
         padding: 20px;
 
         .menu_img {
@@ -277,7 +282,7 @@ export default {
 
         .menu_text {
           text-align: center;
-          margin-top: 10vh;
+          margin-top: 8vh;
         }
 
         &:hover {

@@ -1,33 +1,37 @@
 <template>
   <div class="mobileNav">
     <div class="menu" :class="{db: scrollPosition>800}">
-      <div class="brandName">
-        <router-link :to="{name: 'Home'}" class="router-link" exact>
-          <img :src="logo" alt="Brand Logo" v-on:click="toggleMenu = 'false'"></router-link>
+      <div class="mobile_header">
+        <div class="order">
+            <a class="orderbtn">Order Now</a>
+        </div>
+        <div class="brandName">
+          <router-link :to="{name: 'Home'}" class="router-link">
+            <img :src="logo" alt="Brand Logo" v-on:click="toggleMenu = 'false'"></router-link>
 
-      </div>
-      <div class="menuIcon">
-        <img src="https://img.icons8.com/metro/26/fa314a/menu.png" v-on:click="toggleMenu =!toggleMenu"
-             alt="menu_icon"/>
-      </div>
-      <div class="navBar" :class="{'expandMenu': !toggleMenu}">
-        <div class="closeNavBar">
-          <img src="https://img.icons8.com/ios-glyphs/30/fa314a/macos-close.png" v-on:click="toggleMenu =!toggleMenu"
-               alt="close_nav"/>
         </div>
 
+        <div class="menuIcon">
+          <img :src="navIcon" @click="toggleMenu"
+               alt="menu_icon"/>
+        </div>
+      </div>
+
+
+      <div class="navBar" :class="{'expandMenu': !toggle}">
         <div class="navLinks">
           <ul>
-            <li v-on:click="toggleMenu =!toggleMenu">
+            <li @click="toggleMenu">
               <router-link :to="{name: 'Home'}" class="router-link" exact>Home</router-link>
             </li>
-
-            <li @click="toggleMenu=!toggleMenu">
-            <li v-on:click="toggleMenu =!toggleMenu">
+            <li @click="toggleMenu">
+            <li @click="toggleMenu">
               <router-link :to="{name: 'Menu'}" class="router-link" exact>Menu</router-link>
             </li>
-
-            <li @click="toggleMenu=!toggleMenu">
+            <li @click="toggleMenu">
+              <a class="button1">Our Story </a>
+            </li>
+            <li @click="toggleMenu">
               <a class="button1">Location </a>
             </li>
 
@@ -35,7 +39,6 @@
           </ul>
           <div>
           </div>
-
 
         </div>
 
@@ -49,15 +52,26 @@ export default {
   name: "MobileNav",
   data() {
     return {
-      logo: require('/src/assets/Images/mobileLogo.png'),
+      logo: require('/src/assets/Images/logo.svg'),
       scrollPosition: null,
-      toggleMenu: true,
+      toggle: true,
+      navIcon: "https://img.icons8.com/metro/26/ffffff/menu.png",
     }
   },
   components: {
     // socialButton,
   },
-  methods: {},
+  methods: {
+    toggleMenu() {
+      this.toggle = !this.toggle;
+      if (this.navIcon === "https://img.icons8.com/metro/26/ffffff/menu.png") {
+        this.navIcon =  "https://img.icons8.com/pastel-glyph/30/ffffff/cancel--v1.png";
+      } else {
+        this.navIcon = "https://img.icons8.com/metro/26/ffffff/menu.png"
+      }
+
+    }
+  },
   mounted() {
     window.addEventListener('scroll', this.updateScroll);
   }
@@ -91,16 +105,51 @@ export default {
     display: block !important;
     position: fixed;
     top: 0;
-    z-index: 9;
+    z-index: 9999;
     width: 100%;
     background: $bgColor;
-    //height: 10vh;
     font-family: 'Poppins', sans-serif;
 
-
     .menu {
-      display: flex;
-      justify-content: space-between;
+
+      .mobile_header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        .order {
+
+          width: 100%;
+          right: 0;
+          .orderbtn {
+            background:$redFill !important;
+            display: block;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding:20px;
+            text-align: center;
+
+          }
+
+
+        }
+
+        .brandName {
+          text-align: center;
+          padding: 0;
+
+          img {
+            width: 60px;
+
+          }
+
+        }
+
+        .menuIcon {
+          padding-right: 20px;
+          padding-top:12px;
+          text-align: end;
+        }
+      }
 
       .openNavbar {
         cursor: pointer;
@@ -108,31 +157,16 @@ export default {
         right: 0;
       }
 
-      .brandName {
-
-        img {
-          padding-top: 5px;
-          width: 40px;
-
-        }
-      }
-
-      .menuIcon {
-        margin: 0;
-        text-align: end;
-        padding-right: 20px;
-        padding-top: 10px;
-
-      }
     }
+
 
     .navBar {
       height: 100%;
       position: fixed;
-      z-index: 1;
-      top: 0;
+      z-index: 99999;
+      top: 60px;
       right: 0;
-      background-color: $bgColor;
+      background-color: lighten($bgColor, 7%);
       overflow-x: hidden;
       transition: 0.9s;
       width: 0;
@@ -143,6 +177,7 @@ export default {
         width: 100%;
         text-align: center;
         margin-top: 30px;
+        height: 100%;
 
         ul {
           animation-name: slide-anim;
@@ -155,10 +190,15 @@ export default {
               cursor: pointer;
               padding: 8px;
               text-decoration: none;
-              font-size: 16px;
+              font-weight: bold;
               display: block;
               transition: 0.3s;
               color: $accentColor;
+              font-size: 30px;
+
+              &:hover {
+                color: $textColor;
+              }
             }
 
             .router-link-active {
@@ -167,27 +207,18 @@ export default {
               border-bottom: none !important;
               padding: 8px;
 
-              &:hover {
-                color: $bgColor;
-              }
+
             }
 
           }
         }
       }
 
-      .closeNavBar {
-        cursor: pointer;
 
-        img {
-          padding: 10px;
-        }
-
-      }
     }
   }
   .expandMenu {
-    width: 70% !important;
+    width: 100% !important;
   }
 }
 </style>

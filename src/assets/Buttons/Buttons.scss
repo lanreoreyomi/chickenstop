@@ -8,39 +8,42 @@
   width: 160px;
   cursor: pointer;
   height: 50px;
+  font-size:16px;
   outline: none;
   border: none;
-  background: $accentColor;
+  background: $redFill;
   text-align: center;
   text-transform: uppercase;
-  color: $bgColor;
   letter-spacing: 2px;
-
-  border-radius: 6px;
+  color: $textColor;
+  border-radius: 2rem !important;
   a {
     text-decoration: none;
+    font-size:16px;
   }
   &:before {
     display: block;
     transition: 0.5s all ease;
     position: absolute;
-    border-radius: 6px;
+    border-radius: 2rem !important;
     top: 0;
     left: 0;
     right: 50%;
     bottom: 0;
     opacity: 0;
     content: '';
-    background: $redFill;
+    background: $accentColor;
+
   }
 
   &:hover {
-    color: white;
+    color: $bgColor;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 2rem;
+    background: $accentColor;
 
     &:before {
-      border-radius: 6px;
+      border-radius: 2rem !important;
       transition: 0.5s all ease;
       left: 0;
       right: 0;
@@ -53,20 +56,19 @@
 }
 
 @mixin seeMenu {
-  cursor: pointer;
   margin: 0 auto;
   width: 100%;
   position: relative;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 2rem;
   background: none;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   outline: none;
-
+  font-size:16px;
   color: $textColor;
   border: 1px solid $accentColor;
-
+  text-transform: uppercase;
   &:hover {
     background: lighten($accentColor, 2%);
     color: $bgColor;
@@ -82,14 +84,16 @@
   padding: 10px;
   border-radius: 6px;
   background: none;
+  font-size:16px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   outline: none;
-  border:none;
-  background: $accentColor;
-  color: $bgColor;
+  border: none;
+  text-transform: uppercase;
+  background: $redFill;
+  color: $textColor;
   &:hover {
-    background: $redFill;
-    color: $textColor;
+    background: $accentColor;
+    color: $bgColor;
   }
 }

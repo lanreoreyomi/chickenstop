@@ -76,7 +76,7 @@ export default {
           text-align: center;
 
           img {
-            width: 100%;
+            width: 50%;
             padding: 10px;
 
           }
@@ -85,7 +85,7 @@ export default {
         .menu_text {
           text-align: center;
           .menu_desc {
-            padding: 20px;
+            padding: 10px;
             text-align: center;
             cursor: pointer;
             font-weight: bolder;
@@ -101,19 +101,19 @@ export default {
           .featured_price {
             opacity: 0.8;
             color: $redFill;
-            font-size: 26px;
-            padding: 20px;
+            font-size: 16px;
+            padding: 10px;
 
             span {
-              font-weight: bolder;
-              color: $redFill;
+              font-weight: normal;
+              color: $accentColor;
             }
           }
 
           .see_menu {
             @include orderBtn;
             width: 60%;
-
+            border-radius: 2rem ;
           }
         }
 
@@ -163,6 +163,7 @@ export default {
               @include orderBtn;
               width: 60%;
               margin-bottom: 5vh;
+              border-radius: 2rem !important;
             }
           }
 
@@ -179,7 +180,9 @@ export default {
 
 @media only screen and (min-width: 600px) and (max-width: 786px) {
   .container {
+
     .featured_menu {
+
       margin-top: 10px;
       width: 100%;
 
@@ -212,6 +215,7 @@ export default {
               @include orderBtn;
               width: 60%;
               margin-bottom: 5vh;
+              border-radius: 2rem !important;
             }
           }
 
@@ -225,9 +229,6 @@ export default {
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -265,6 +266,7 @@ export default {
               @include orderBtn;
               width: 60%;
               margin-bottom: 5vh;
+              border-radius: 2rem !important;
             }
           }
 

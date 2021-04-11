@@ -12,16 +12,13 @@
           <p class="menu_item_desc">{{ menu_desc }}</p>
           <div class="priceAndOrder">
             <p class="featured_price"><span>{{ price }}</span></p>
-            <Button class="see_menu">
-              <router-link to='Menu/#menuSection' class="routerlink" exact>SEE MENU
+
+              <router-link to='Menu/' class="routerlink see_menu" exact>SEE MENU
               </router-link>
-            </Button>
+
           </div>
-
         </div>
-
       </div>
-
     </div>
   </div>
 </template>
@@ -64,7 +61,7 @@ export default {
       border-radius: 6px;
       padding: 20px;
       position: relative;
-      background: lighten($bgColor, 5%);
+      //background: lighten($bgColor, 5%);
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
       transform: scale(1);
       z-index: 9;
@@ -87,7 +84,6 @@ export default {
       .menu_text {
         text-align: center;
         margin-top: 15vh;
-
         .menu_desc {
           padding: 10px;
           text-align: center;
@@ -126,11 +122,9 @@ export default {
             @include seeMenu();
             margin: 0 !important;
             width: 50%;
-            .routerlink {
               color: $textColor;
               text-decoration: none;
 
-            }
             &:hover {
               .routerlink {
                 color: $bgColor
@@ -153,12 +147,11 @@ export default {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .container {
-    margin-top: 40px;
     .menu_items {
 
       .menus {
         width: 90%;
-        margin: 10vh auto;
+        margin: 4vh auto;
         padding: 20px;
 
         .menu_img {
@@ -185,6 +178,7 @@ export default {
       }
     }
   }
+
 }
 
 @media only screen and (min-width: 600px) and (max-width:786px) {
@@ -227,11 +221,9 @@ export default {
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .container {
     margin-top: 0 !important;
-
     .menu_items {
-
       .menus {
-        width: 80% !important;
+        width: 100% !important;
         margin: 5vh auto;
         padding: 20px;
 
@@ -269,7 +261,7 @@ export default {
 
       .menus {
         width: 100% !important;
-        margin: 8vh auto;
+        margin: 4vh auto;
         padding: 20px;
 
         .menu_img {
