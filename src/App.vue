@@ -1,31 +1,31 @@
 <template>
   <div class="container">
     <div class="desktopNav">
-      <desktopNav/>
+      <desktop-nav/>
     </div>
     <div class="mobileNav">
-      <mobileNav/>
+      <mobile-nav/>
     </div>
     <router-view/>
     <div class="footers">
-      <footers/>
+      <Footer/>
     </div>
 
   </div>
 </template>
 <script>
 
-import footers from '@/components/layout/footers.vue'
-import desktopNav from '@/components/layout/desktopNav.vue'
-import mobileNav from '@/components/layout/mobileNav.vue'
+import Footer from '@/components/layout/Footer.vue'
+import DesktopNav from '@/components/layout/TheDesktopNav.vue'
+import MobileNav from '@/components/layout/TheMobileNav.vue'
 
 
 export default {
   name: 'App',
   components: {
-    desktopNav,
-    footers,
-    mobileNav
+    DesktopNav,
+    Footer,
+    MobileNav
 
   },
   data() {

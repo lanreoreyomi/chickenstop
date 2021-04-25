@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import VueScrollTo from 'vue-scrollto';
 
 
+
 Vue.config.productionTip = false
 
 Vue.use(VueScrollTo, {

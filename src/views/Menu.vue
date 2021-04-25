@@ -1,176 +1,72 @@
 <template>
   <div class="container" id="menu_home">
-    <div class="menu_signature">
-      <div class="signature_info" data-aos="fade-right">
-        <div class="signature_img">
-          <img src="../assets/Images/menu_food.jpeg" alt="marinated_chicken">
-        </div>
-        <div class="signature_text" data-aos="fade-left">
-          <h3>
-            Lorem ipsum dolor sit ame.
 
-          </h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-
-
-        </div>
-
-
-      </div>
-
-    </div>
-    <hr>
     <div class="menu" id="menu">
       <h3>Our Menu</h3>
-      <div class="menu_list">
-        <Menus v-for="(menus, i) in  our_menu" :key="i" :menu_name="menus.menu_name" :img="menus.img"
-               :price="menus.price" :menu_desc="menus.menu_desc" :action="menus.btn_action" class="menus"/>
+
+      <div class="featured">
+
+        <div class="menu_list" data-aos="zoom-in" data-aos-duration="3000">
+          <feature-card v-for="(menus, i) in our_menu" :key="i" :menu_name="menus.menu_name" :img="menus.img"/>
+        </div>
+
       </div>
+      <div class="pdf_menu">
+
+        <a href="./takeoutmenu.pdf" download="takeoutmenu.pdf" target="_blank">
+          Download Our Menu
+        </a>
+        <div class="showpdf">
+
+        </div>
+      </div>
+
     </div>
-    <div class="gallery">
-      <img src="../assets/Images/pic1.jpeg" alt="">
-      <img src="../assets/Images/pic2.jpeg" alt="">
-      <img src="../assets/Images/pic3.jpeg" alt="">
-      <img src="../assets/Images/pic4.jpeg" alt="">
-      <img src="../assets/Images/pic2.jpeg" alt="">
-      <img src="../assets/Images/pic4.jpeg" alt="">
-      <img src="../assets/Images/pic1.jpeg" alt="">
-      <img src="../assets/Images/pic5.jpeg" alt="">
-      <img src="../assets/Images/pic1.jpeg" alt="">
-      <img src="../assets/Images/pic2.jpeg" alt="">
-      <img src="../assets/Images/pic5.jpeg" alt="">
-      <img src="../assets/Images/pic1.jpeg" alt="">
-    </div>
+
   </div>
 
 </template>
 
 <script>
-import Menus from '@/components/order_menu_comp'
+ import FeatureCard from '@/components/FeaturedMenu'
 
 
 export default {
   name: "Menu",
   components: {
-    Menus
+    // OrderMenu,
+    FeatureCard
+
   },
   data() {
     return {
       our_menu: [
         {
-          img: require('../assets/Images/f1.png'),
-          menu_name: 'Chicken Wrap',
-          price: "$ 12.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
+          img: require('../assets/Images/halfchicken.jpeg'),
+          menu_name: '1/2 Chicken',
+          // price: "$ 12.99",
+          // menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
         },
         {
-          img: require('../assets/Images/f2.png'),
-          menu_name: 'Chicken Soup',
-          price: "$ 1.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
+          img: require('../assets/Images/ChickenandRibsCombo2.jpeg'),
+          menu_name: 'Chicken Ribs and Combo',
+          // price: "$ 1.99",
+          // menu_desc: 'Lorem ipsum dolor sit amet, consectetur '
         },
         {
-          img: require('../assets/Images/f3.png'),
-          menu_name: 'Breaded Chicken',
-          price: "$ 8.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
+          img: require('../assets/Images/SSS.jpeg'),
+          menu_name: 'Crispy Chicken Sandwich',
+          // price: "$ 8.99",
+          // menu_desc: 'Lorem ipsum dolor sit amet, consectetur '
         },
         {
-          img: require('../assets/Images/f7.png'),
-          menu_name: 'Roasted Chicken',
-          price: "$ 73.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f9.png'),
-          menu_name: 'Chicken Wrap',
-          price: "$ 12.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f10.png'),
-          menu_name: 'Chicken Soup',
-          price: "$ 1.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f5.png'),
-          menu_name: 'Breaded Chicken',
-          price: "$ 8.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f6.png'),
-          menu_name: 'Roasted Chicken',
-          price: "$ 73.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f3.png'),
-          menu_name: 'Breaded Chicken',
-          price: "$ 8.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f1.png'),
-          menu_name: 'Chicken Wrap',
-          price: "$ 12.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f2.png'),
-          menu_name: 'Chicken Soup',
-          price: "$ 1.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f3.png'),
-          menu_name: 'Breaded Chicken',
-          price: "$ 8.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f1.png'),
-          menu_name: 'Chicken Wrap',
-          price: "$ 12.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f2.png'),
-          menu_name: 'Chicken Soup',
-          price: "$ 1.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f3.png'),
-          menu_name: 'Breaded Chicken',
-          price: "$ 8.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-        {
-          img: require('../assets/Images/f7.png'),
-          menu_name: 'Roasted Chicken',
-          price: "$ 73.99",
-          menu_desc: 'Lorem ipsum dolor sit amet, consectetur ',
-          btn_action: "Order Now",
-        },
-      ]
-    }
+          img: require('../assets/Images/GoAvocadoSalad2.jpeg'),
+          menu_name: 'Go Avocado Salad',
+          // price: "$ 73.99",
+          // menu_desc: 'Lorem ipsum dolor sit amet, consectetur '
+        }
+      ],
+     }
   },
   methods: {
     scrollToPosition() {
@@ -178,10 +74,13 @@ export default {
       if (section)
         this.$nextTick(() => window.document.getElementById(section).scrollIntoView());
     },
+
+
   },
 
   mounted() {
     this.scrollToPosition();
+
   }
 }
 </script>
@@ -200,88 +99,39 @@ export default {
   width: 100%;
   margin: 0 auto;
 
+  .pdf_menu {
+    text-align: center;
+    margin-top: 1vh;
 
-  hr {
-    width: 50%;
-    margin: 5vh auto;
+    a {
+      color: $accentColor;
 
-  }
+      border-radius: 2rem;
+      display: inline-block;
+      width: 20%;
+      border: 1px solid $accentColor;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+      text-decoration: none;
+      transform: scale(1);
+      outline: none;
+      padding: 20px;
 
-  .menu_signature {
-    margin: 0 auto;
-    width: 90%;
-    padding-top: 10vh;
-
-    h2 {
-      padding: 40px;
-      font-size: 40px;
-
+      &:hover {
+        background-color: $accentColor;
+        color: $bgColor;
+      }
     }
 
-    .signature_info {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 40px;
-    }
-
-    .signature_img {
-      padding: 30px;
-
-      img {
-        width: 100%;
-        border-radius: 2rem;
-      }
-
-    }
-
-    .signature_text {
-      position: relative;
-      padding: 30px;
-      h3 {
-        padding-top: 25px;
-        text-align: start;
-        font-size: 50px;
-        margin-top: 25vh;
-
-        opacity: 0.8;
-        background: black;
-
-      }
-
-      p {
-        padding-top: 25px;
-        opacity: 0.8;
-      }
-
-
-      .btnSec {
-        @include orderBtn;
-        border: none;
-        background: lighten($bgColor, 10%);
-        padding: 20px;
-        width: 40%;
-        margin-top: 55px;
-        color: $accentColor;
-
-        a {
-          color: $textColor;
-          text-decoration: none;
-        }
-
-        &:hover {
-          background: lighten($bgColor, 10%);
-        }
-      }
-
-    }
   }
 
   .menu {
-    width: 88%;
+    width: 90%;
     margin: 0 auto;
 
     h3 {
-      padding-top: 25px;
+      padding-top: 50px;
       text-align: start;
       font-size: 50px;
       margin-top: 10vh;
@@ -293,29 +143,26 @@ export default {
     .menu_list {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-gap: 0;
+      grid-gap: 40px;
     }
   }
 
-  .gallery {
-    margin-top: 30vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    img {
-      max-width: 100%;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-  }
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .container {
+
+    .menu {
+      h3 {
+        padding-top: 15vh !important;
+        padding-bottom: 8vh !important;
+        font-size: 30px !important;
+        text-align: center
+      }
+    }
+
     .menu_signature {
       width: 100% !important;
 
@@ -377,6 +224,21 @@ export default {
       }
     }
 
+    .pdf_menu {
+
+
+      a {
+
+        width: 100%;
+
+        &:hover {
+          background-color: $accentColor;
+          color: $bgColor;
+        }
+      }
+
+    }
+
     .menu {
       h3 {
         padding-top: 0px;
@@ -403,66 +265,19 @@ export default {
 
 @media only screen and (min-width: 600px) and (max-width: 786px) {
   .container {
-    .menu_signature {
-      width: 100% !important;
-      padding: 20px;
-      margin-top: 5vh;
 
-      h2 {
-        padding: 10px;
-        font-size: 30px;
 
+    .pdf_menu {
+      a {
+
+        width: 100%;
+
+        &:hover {
+          background-color: $accentColor;
+          color: $bgColor;
+        }
       }
 
-
-      .signature_info {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-      }
-
-      .signature_img {
-        padding: 0;
-        margin: 0 auto;
-        text-align: center;
-
-        img {
-          margin: 0 auto;
-          width: 90%;
-          border-radius: 2rem;
-        }
-
-      }
-
-      .signature_text {
-        position: relative;
-
-        h3 {
-          padding-top: 5px;
-          font-size: 30px;
-          margin-top: 2vh;
-          text-align: center !important;
-        }
-
-        p {
-          padding-top: 5px;
-          text-align: center !important;
-        }
-
-        .btn {
-          padding: 5px;
-          margin: 0 auto;
-          text-align: center;
-
-          .btnSec {
-            width: 80%;
-            margin: 10px auto;
-          }
-
-        }
-
-
-      }
     }
 
     .menu {
@@ -503,65 +318,38 @@ export default {
       h2 {
         padding: 10px;
         font-size: 30px;
-
       }
 
 
-      .signature_info {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 0;
+    }
+
+    .pdf_menu {
+
+
+      a {
+
+        width: 100%;
+
+        &:hover {
+          background-color: $accentColor;
+          color: $bgColor;
+        }
       }
 
-      .signature_img {
-        padding: 0;
-        margin: 0 auto;
-        text-align: center;
-
-        img {
-          margin: 0 auto;
-          width: 90%;
-          border-radius: 2rem;
-        }
-
-      }
-
-      .signature_text {
-        position: relative;
-        text-align: center;
-
-        h3 {
-          padding: 20px;
-          font-size: 40px;
-          margin-top: 2vh;
-          text-align: center;
-        }
-
-        p {
-          padding: 20px;
-        }
-
-        .btn {
-          padding: 5px;
-          margin: 0 auto;
-          text-align: center;
-
-          .btnSec {
-            width: 80%;
-            margin: 10px auto;
-          }
-
-        }
-
-
-      }
     }
 
     .menu {
 
+      h3{
+        padding-top:10vh;
+        padding-bottom:0;
+        margin-bottom:4vh;
+        font-size:40px;
+      }
       .menu_list {
         grid-template-columns: 1fr 1fr;
-        grid-gap: 0;
+        grid-gap: 20px;
+
       }
     }
 
@@ -575,73 +363,18 @@ export default {
 
 @media only screen and (min-width: 1024px) and (max-width: 1366px) {
   .container {
-    .menu_signature {
-      width: 100% !important;
-      margin-top: 5vh;
-      margin-bottom: 5vh;
-
-      h2 {
-        padding: 10px;
-        font-size: 30px;
-
-      }
-
-
-      .signature_info {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-      }
-
-      .signature_img {
-        padding: 0;
-        margin: 0 auto;
-        text-align: center;
-
-        img {
-          margin: 0 auto;
-          width: 90%;
-          border-radius: 2rem;
-        }
-
-      }
-
-      .signature_text {
-        position: relative;
-        text-align: center;
-
-        h3 {
-          padding: 20px;
-          font-size: 40px;
-          margin-top: 2vh;
-          text-align: center;
-        }
-
-        p {
-          padding: 20px;
-        }
-
-        .btn {
-          padding: 5px;
-          margin: 0 auto;
-          text-align: center;
-
-          .btnSec {
-            width: 80%;
-            margin: 10px auto;
-          }
-
-        }
-
-
-      }
-    }
-
+ margin-top:0;
+padding-top:0;
     .menu {
-
+      margin-top:0;
+      padding-top:0;
+      h3{
+        margin-top:0;
+        padding-top:200px;
+      }
       .menu_list {
         grid-template-columns: 1fr 1fr;
-        grid-gap: 0;
+        grid-gap: 20px;
 
       }
     }

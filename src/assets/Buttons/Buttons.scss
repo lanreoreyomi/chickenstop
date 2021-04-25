@@ -1,6 +1,5 @@
 @import "src/assets/Colors/colors";
 
-
 @mixin homeButton {
   transition: ease-out 0.3s;
   position: relative;
@@ -69,11 +68,11 @@
   color: $textColor;
   border: 1px solid $accentColor;
   text-transform: uppercase;
-  &:hover {
-    background: lighten($accentColor, 2%);
-    color: $bgColor;
-
-  }
+  //&:hover {
+  //  background: lighten($accentColor, 2%);
+  //  color: $bgColor;
+  //
+  //}
 }
 
 @mixin orderBtn {
@@ -92,8 +91,9 @@
   text-transform: uppercase;
   background: $redFill;
   color: $textColor;
-  &:hover {
-    background: $accentColor;
-    color: $bgColor;
-  }
+  //&:hover {
+  //  background: $accentColor;
+  //  color: $bgColor;
+  //}
+  text-decoration: none !important;
 }
