@@ -15,9 +15,10 @@
             <div class="socialMedia">
 
               <p>
+                <img src="https://img.icons8.com/ios-filled/18/FFDB16/instagram-new.png" alt="instagrem"/>
                 <a
                     href="https://www.instagram.com/chickenstopnyc/" target="_blank">
-                  Follow Us: <img src="https://img.icons8.com/ios-filled/20/FFDB16/instagram-new.png" alt="instagrem"/></a>
+                  Follow Us </a>
               </p>
             </div>
           </div>
@@ -29,10 +30,8 @@
           </div>
           <div class="hours">
             <h3>Hours</h3>
-            <p>MON-SAT</p>
+            <p>MON-SUNDAY</p>
             <p>11am - 10pm</p>
-            <p>Sunday</p>
-            <p>11am - 9pm</p>
           </div>
           <div class="support">
             <h3>Contact Us</h3>
@@ -87,6 +86,12 @@ export default {
             text-align: center;
             position: relative;
             color: $accentColor;
+
+            img {
+
+               cursor: pointer;
+
+            }
 
             a {
               text-align: center;

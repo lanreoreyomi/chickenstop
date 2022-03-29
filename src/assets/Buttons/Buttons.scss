@@ -68,11 +68,11 @@
   color: $textColor;
   border: 1px solid $accentColor;
   text-transform: uppercase;
-  //&:hover {
-  //  background: lighten($accentColor, 2%);
-  //  color: $bgColor;
-  //
-  //}
+  &:hover {
+    background: lighten(#FFDB16, 2%);
+    color: black;
+
+  }
 }
 
 @mixin orderBtn {

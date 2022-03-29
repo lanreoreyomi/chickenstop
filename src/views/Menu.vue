@@ -14,13 +14,13 @@
       <div class="menu_img">
         <img src="../assets/Images/TAKEOUT_MENU_1.jpg" alt="">
         <div class="order">
-          <a class="orderbtn" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
+          <a class="btn_filled" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
         </div>
       </div>
            <div class="menu_img">
         <img src="../assets/Images/TAKEOUT_MENU_2.jpg" alt="">
         <div class="order">
-          <a class="orderbtn" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
+          <a class="btn_filled" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
         </div>
       </div>
 
@@ -111,25 +111,38 @@ export default {
       max-width: 100%;
     }
 
-    a {
-      color: $accentColor;
-
-      border-radius: 2rem;
-      display: inline-block;
-      width: 20%;
-      border: 1px solid $accentColor;
-      margin-top: 40px;
-      margin-bottom: 40px;
+    .btn_filled {
+      opacity: 1;
       text-align: center;
+      @include homeButton;
+      border-radius: 6px;
+      padding: 12px 26px 12px 20px;
+      background: $redFill;
+      color: $textColor;
+      font-weight: normal;
+      display: inline-block;
+      width: 160px;
       text-decoration: none;
-      transform: scale(1);
-      outline: none;
-      padding: 20px;
+     margin: 50px;
+
+      &:before {
+        color: $bgColor !important;
+        background: $accentColor;
+      }
 
       &:hover {
-        background-color: $accentColor;
-        color: $bgColor;
+        color: $bgColor !important;
+        opacity: 1;
+        border-bottom: none;
       }
+
+
+      &:hover {
+
+        opacity: 1;
+        border-bottom: none;
+      }
+
     }
 
   }

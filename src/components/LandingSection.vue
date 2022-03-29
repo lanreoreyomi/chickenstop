@@ -4,7 +4,7 @@
       <div class="landing_info">
         <div class="landing_text">
           <h1>The <span>Flame Grilled </span> <span class="way">Way</span></h1>
-          <a class="btn_filled" href="https://store.goparrot.ai/chicken-stop/menu">Order Now</a>
+          <a class="btn_filled" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
           <router-link :to="{name: 'Menu'}" class="routerlink btn_outline" v-scroll-to="'#menu_home'">SEE MENU
           </router-link>
         </div>
@@ -15,7 +15,7 @@
       <div class="landing_info">
         <div class="landing_text">
           <h1>Citrus <span>  Marinated Chicken </span><span class="way">and Grilled Slow</span></h1>
-          <a class="btn_filled" href="https://store.goparrot.ai/chicken-stop/menu">Order Now</a>
+          <a class="btn_filled" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
 
           <router-link :to="{name: 'Menu'}" class="routerlink btn_outline">SEE MENU
            </router-link>
@@ -29,7 +29,7 @@
         <div class="landing_text">
           <h1>Our Sides are <span>  Made Fresh </span><span class="way"> & Hand-Made Daily</span></h1>
 
-          <a class="btn_filled" href="https://store.goparrot.ai/chicken-stop/menu">Order Now</a>
+          <a class="btn_filled" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
 
           <router-link :to="{name: 'Menu'}" class="routerlink btn_outline">SEE MENU
            </router-link>
@@ -43,7 +43,7 @@
         <div class="landing_text">
           <h1>Our Handmade <span>  Crispy Chicken</span><span class="way"> Sandwich</span></h1>
 
-          <a class="btn_filled" href="https://store.goparrot.ai/chicken-stop/menu">Order Now</a>
+          <a class="btn_filled" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
 
           <router-link :to="{name: 'Menu'}" class="routerlink btn_outline">SEE MENU
            </router-link>
@@ -59,7 +59,7 @@
         <div class="landing_text">
           <h1> Flame-Grilled <span>  Ribs lightly glazed</span><span class="way">in housemade BBQ Sauce!</span></h1>
 
-          <a class="btn_filled" href="https://store.goparrot.ai/chicken-stop/menu">Order Now</a>
+          <a class="btn_filled" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
 
           <router-link :to="{name: 'Menu'}" class="routerlink btn_outline">SEE MENU
             <img src="https://img.icons8.com/material/24/000000/long-arrow-right--v2.png" alt="arrow-left"/>
