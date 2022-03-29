@@ -6,20 +6,24 @@
 
       <div class="featured">
 
-        <div class="menu_list" data-aos="zoom-in" data-aos-duration="3000">
-          <feature-card v-for="(menus, i) in our_menu" :key="i" :menu_name="menus.menu_name" :img="menus.img"/>
-        </div>
+        <!--        <div class="menu_list" data-aos="zoom-in" data-aos-duration="3000">-->
+        <!--          <feature-card v-for="(menus, i) in our_menu" :key="i" :menu_name="menus.menu_name" :img="menus.img"/>-->
+        <!--        </div>-->
 
       </div>
-      <div class="pdf_menu">
-
-        <a href="./takeoutmenu.pdf" download="takeoutmenu.pdf" target="_blank">
-          Download Our Menu
-        </a>
-        <div class="showpdf">
-
+      <div class="menu_img">
+        <img src="../assets/Images/TAKEOUT_MENU_1.jpg" alt="">
+        <div class="order">
+          <a class="orderbtn" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
         </div>
       </div>
+           <div class="menu_img">
+        <img src="../assets/Images/TAKEOUT_MENU_2.jpg" alt="">
+        <div class="order">
+          <a class="orderbtn" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
+        </div>
+      </div>
+
 
     </div>
 
@@ -28,14 +32,14 @@
 </template>
 
 <script>
- import FeatureCard from '@/components/FeaturedMenu'
+// import FeatureCard from '@/components/FeaturedMenu'
 
 
 export default {
   name: "Menu",
   components: {
     // OrderMenu,
-    FeatureCard
+    // FeatureCard
 
   },
   data() {
@@ -66,7 +70,7 @@ export default {
           // menu_desc: 'Lorem ipsum dolor sit amet, consectetur '
         }
       ],
-     }
+    }
   },
   methods: {
     scrollToPosition() {
@@ -99,9 +103,13 @@ export default {
   width: 100%;
   margin: 0 auto;
 
-  .pdf_menu {
+  .menu_img {
     text-align: center;
     margin-top: 1vh;
+
+    img {
+      max-width: 100%;
+    }
 
     a {
       color: $accentColor;
@@ -144,6 +152,7 @@ export default {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 40px;
+      margin-bottom: 5vh;
     }
   }
 
@@ -156,7 +165,7 @@ export default {
 
     .menu {
       h3 {
-        padding-top: 15vh !important;
+        padding-top: 7vh !important;
         padding-bottom: 8vh !important;
         font-size: 30px !important;
         text-align: center
@@ -224,18 +233,12 @@ export default {
       }
     }
 
-    .pdf_menu {
-
-
-      a {
-
-        width: 100%;
-
-        &:hover {
-          background-color: $accentColor;
-          color: $bgColor;
+    .menu_img {
+      .order{
+        .orderbtn{
+          width: 100%;
         }
-      }
+    }
 
     }
 
@@ -340,12 +343,13 @@ export default {
 
     .menu {
 
-      h3{
-        padding-top:10vh;
-        padding-bottom:0;
-        margin-bottom:4vh;
-        font-size:40px;
+      h3 {
+        padding-top: 10vh;
+        padding-bottom: 0;
+        margin-bottom: 4vh;
+        font-size: 40px;
       }
+
       .menu_list {
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
@@ -363,15 +367,18 @@ export default {
 
 @media only screen and (min-width: 1024px) and (max-width: 1366px) {
   .container {
- margin-top:0;
-padding-top:0;
+    margin-top: 0;
+    padding-top: 0;
+
     .menu {
-      margin-top:0;
-      padding-top:0;
-      h3{
-        margin-top:0;
-        padding-top:200px;
+      margin-top: 0;
+      padding-top: 0;
+
+      h3 {
+        margin-top: 0;
+        padding-top: 200px;
       }
+
       .menu_list {
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;

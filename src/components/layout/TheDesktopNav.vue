@@ -23,7 +23,7 @@
 
 
           <li id="order_now">
-            <a class="btn_filled" href="https://store.goparrot.ai/chicken-stop/menu">Order Now</a>
+            <a class="btn_filled" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
           </li>
         </ul>
 

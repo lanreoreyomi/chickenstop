@@ -3,7 +3,7 @@
     <div class="menu" :class="{db: scrollPosition>800}">
       <div class="mobile_header">
         <div class="order">
-          <a class="orderbtn" href="https://store.goparrot.ai/chicken-stop/menu">Order Now</a>
+          <a class="orderbtn" href="https://direct.chownow.com/order/33509/locations/50235">Order Now</a>
         </div>
         <div class="brandName">
           <router-link :to="{name: 'Home'}" class="router-link" v-scroll-to="'#home'">

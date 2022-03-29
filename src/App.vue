@@ -43,7 +43,27 @@ export default {
 
       window.addEventListener('scroll', this.updateScroll);
     }
-  }
+  },
+  metaInfo() {
+    return {
+      title: "Chicken Stop | Flame Grilled Way",
+      titleTemplate: ' %s | Best Grilled Chicken in New York',
+      meta: [
+        {charset: 'utf-8'},
+        {name: 'description', content: 'gator'},
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        {
+          vmid: "description",
+          name: "description",
+          content:
+              " Casual setting specializing in Flame-Grilled Chicken, Ribs, Wings & Burgers. " +
+              "Enjoy Our fresh Salads & Bowls, Sandwiches & Gyros, Wraps & Burritos, and Family Meals ! Our side orders " +
+              "and sauces are made by hand ! Join us either indoors, our backyard or delivery to your door"
+
+        }
+      ]
+    };
+  },
 }
 </script>
 
